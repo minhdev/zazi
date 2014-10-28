@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-success">
+    <div class="panel-heading text-center"><h4>@ViewBag.Greeting</h4></div>
+    <div class="panel-body">
+        <p>
+            <a href="/Home/Create" class="btn-link">new note</a>
+        </p>
+        @foreach (var e in ViewBag.Entries)
+        {
+            <section class="contact">
+                <header>
+                    <h3>@e.Content</h3>
+                </header>
+                <p>Posted by @e.Name on @e.DateCreated.ToLongDateString()</p>
+            </section>
+        }
+    </div>
+</div>
+
+       
